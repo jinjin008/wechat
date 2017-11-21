@@ -1,0 +1,159 @@
+<div id="wrap-discovery">
+				
+				
+				<div class="groups">
+					<div class="group-item" id="moment">
+						<div class="group-item-left">
+							<img src="img/discover/朋友圈.svg" />
+						</div>
+						<div class="group-item-center ">朋友圈</div>
+						<div class="group-item-right"></div>
+					</div>
+					
+					
+				</div>
+				
+				
+				<div class="groups">
+					<div class="group-item">
+						<div class="group-item-left">
+							<img src="img/discover/扫一扫.svg" />
+						</div>
+						<div class="group-item-center ">扫一扫</div>
+						<div class="group-item-right"></div>
+					</div>
+					
+					<div class="group-item">
+						<div class="group-item-left ">
+							<img src="img/discover/摇一摇.svg" />
+						</div>
+						<div class="group-item-center ">摇一摇</div>
+						<div class="group-item-right"></div>
+					</div>
+					
+					<div class="group-item">
+						<div class="group-item-left ">
+							<img src="img/discover/搜一搜.svg" />
+						</div>
+						<div class="group-item-center ">搜一搜</div>
+						<div class="group-item-right"></div>
+					</div>
+					
+					<div class="group-item">
+						<div class="group-item-left ">
+							<img src="img/discover/看一看.svg" />
+						</div>
+						<div class="group-item-center ">看一看</div>
+						<div class="group-item-right"></div>
+					</div>
+				</div>
+				
+				
+				<div class="groups">
+					<div class="group-item">
+						<div class="group-item-left">
+							<img src="img/discover/附近的人.svg" />
+						</div>
+						<div class="group-item-center ">附近的人</div>
+						<div class="group-item-right"></div>
+					</div>
+					
+					<div class="group-item">
+						<div class="group-item-left ">
+							<img src="img/discover/漂流瓶.svg" />
+						</div>
+						<div class="group-item-center ">漂流瓶</div>
+						<div class="group-item-right"></div>
+					</div>
+					
+					
+				</div>
+				
+				<div class="groups">
+					<div class="group-item">
+						<div class="group-item-left">
+							<img src="img/discover/购物.svg" />
+						</div>
+						<div class="group-item-center ">购物</div>
+						<div class="group-item-right"></div>
+					</div>
+					
+					<div class="group-item">
+						<div class="group-item-left ">
+							<img src="img/discover/游戏.svg" />
+						</div>
+						<div class="group-item-center ">游戏</div>
+						<div class="group-item-right"></div>
+					</div>
+					
+					
+				</div>
+				
+				
+				<div class="groups">
+					<div class="group-item">
+						<div class="group-item-left">
+							<img src="img/discover/小程序.svg" />
+						</div>
+						<div class="group-item-center ">小程序</div>
+						<div class="group-item-right"></div>
+					</div>
+					
+					
+				</div>
+				
+				
+				
+			</div>
+			<script type="text/javascript">
+				$(function(){
+
+	/* 在发现里  点击朋友圈时   要让发现隐藏   让朋友圈显示  */
+	$("#moment").click(function(){
+		$("#dynamic").load("dynamic/03friend_circle.html")
+		$("#nav_back").show()
+		$("#search_img").hide()
+		$("#function_img").css("background-image","url(img/discover/照相机.svg)")
+		$("#nav-center-content").html("朋友圈")
+		
+		$("#menus").hide()
+		
+	});
+	
+	/*  先让回复区域 都隐藏   */
+	$(".moment-function-control").hide();
+	
+	$(".moment-function-right").click(function(){
+		var control = $(this).find(".moment-function-control");
+		$(control).toggle(100)
+	});
+	
+	
+	
+	/* 图片初始化 */
+	$(".moment-content-imgs").each(function(){
+		
+		var imgs = $(this).find(".user-imgs");
+		
+		if(imgs.length==1) {
+			imgs.css("background-image" , "url('"+imgs.data("img")+"')");
+			imgs.addClass("user-imgs-single");
+		} else if( imgs.length>1 ) {
+
+			imgs.each(function( i , img ){
+				$(img).css("background-image" , "url('"+$(img).data("img")+"')");
+				$(img).addClass("user-imgs-multi");
+			});
+		
+		} else {
+			
+		}
+
+	});
+
+
+});
+
+			</script>
+			
+			

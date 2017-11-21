@@ -1,0 +1,106 @@
+<div id="wallet">
+<div id="wallet_header" class="flex  x-between  ">
+
+			
+
+				<div id="wallet_items" class=" flex flow-y x-center y-items-center menus-font-normal">
+
+					<div class="wallet_icon font" style="background-image:url(img/discover/收付款.svg);"></div>
+
+					<div class="wallet-font">收付款</div>
+
+				</div>
+
+				<div id="wallet_items" class="  flex flow-y x-center y-items-center menus-font-normal">
+
+					<div class="wallet_icon " style="background-image: url(img/discover/零钱.svg);"></div>
+
+					<div class="wallet-font">零钱</div>
+
+				</div>
+
+				<div id="wallet_items" class=" flex flow-y x-center y-items-center menus-font-normal">
+
+					<div class="wallet_icon " style="background-image: url(img/discover/银行卡.svg);"></div>
+
+					<div class="wallet-font">银行卡</div>
+
+				</div>
+
+				
+</div>
+<div id="tecent">
+	腾讯服务
+</div>
+<div id="tecents">
+	<div id="tecents_items" class="has-border flex flow-y x-center y-items-center ">
+
+		<div class="tecents_icon " style="background-image: url(img/discover/信用卡.svg);"></div>
+
+		<div class="wallet-font">信用卡还款</div>
+
+	</div>
+	<div id="tecents_items" class=" flex flow-y x-center y-items-center ">
+
+		<div class="tecents_icon " style="background-image: url(img/discover/充值.svg);"></div>
+
+		<div class="wallet-font">手机充值</div>
+
+	</div>
+	<div id="tecents_items" class=" flex flow-y x-center y-items-center ">
+
+		<div class="tecents_icon " style="background-image: url(img/discover/理财通.svg);"></div>
+
+		<div class="wallet-font">理财通</div>
+
+	</div>
+	<div id="tecents_items" class=" flex flow-y x-center y-items-center ">
+
+		<div class="tecents_icon " style="background-image: url(img/discover/生活缴费.svg);"></div>
+
+		<div class="wallet-font">生活缴费</div>
+
+	</div>
+	<div id="tecents_items" class=" flex flow-y x-center y-items-center menus-font-normal">
+
+		<div class="tecents_icon " style="background-image: url(img/discover/城市服务.svg);"></div>
+
+		<div class="wallet-font">城市服务</div>
+
+	</div>
+	<div id="tecents_items" class=" flex flow-y x-center y-items-center menus-font-normal">
+
+		<div class="tecents_icon " style="background-image: url(img/discover/QQ.svg);"></div>
+
+		<div class="wallet-font">Q币充值</div>
+
+	</div>
+	<div id="tecents_items" class=" flex flow-y x-center y-items-center menus-font-normal">
+
+		<div class="tecents_icon " style="background-image: url(img/discover/公益.svg);"></div>
+
+		<div class="wallet-font">腾讯公益</div>
+
+	</div>
+</div>
+<div id="tecent">
+	限时推广
+</div>
+</div>
+<script>
+	$(function(){
+		
+		$("#wallet").show(function(){
+			$("#nav_back").click(function(){
+			$("#nav_back").hide()
+			$("#search_img").show()
+			$("#function_img").css("background-image","url(../img/加号.svg)")
+			$("#menus").show()
+			$("#nav-center-content").html("微信")
+	
+			$("#dynamic").load("dynamic/me.html")
+		})
+		})
+		
+	})
+</script>

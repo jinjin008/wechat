@@ -1,0 +1,154 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+<meta charset="UTF-8"> 
+<title>气泡对话框</title> 
+<script src="myBubbleTooltip.js"></script> 
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script> 
+<style type="text/css"> 
+h1{ 
+font-size: 60px; 
+margin-top: 0; 
+font-family: Arial, sans-serif; 
+text-shadow: 2px 0px 10px #292929; 
+letter-spacing: 0px; 
+text-decoration: none; 
+color: #DDDDDD; 
+} 
+div#left{ 
+border: 1px solid #CCCCCC; 
+width: 200px; 
+height: 300px; 
+background-color: #EEEEEE; 
+float: left; 
+margin: 0 0 0 20px; 
+} 
+div#content{ 
+border: 1px solid #CCCCCC; 
+width: 600px; 
+height: 300px; 
+background-color: #EEEEEE; 
+float: left; 
+margin: 0px 20px; 
+} 
+div#editor{ 
+border: 1px solid #CCCCCC; 
+float: left; 
+width: 300px; 
+height: 300px; 
+} 
+div#test{ 
+border: 2px solid #cccccc; 
+width: 400px; 
+height: 400px; 
+} 
+.bubble_tooltip_common{ 
+z-index: 1; 
+color:#333333; 
+width:150px; 
+position:absolute; 
+display:none; 
+border: 1px solid #AAAAAA; 
+box-shadow: 0px 0px 10px #AAAAAA; 
+border-radius: 5px; 
+padding: 5px 10px; 
+background-color: #FEFAB8; 
+} 
+/*尖端指向左侧的三角形，外缘*/ 
+.triRight{ 
+z-index: 2; 
+border: 10px solid #AAAAAA; 
+border-color: transparent #AAAAAA transparent transparent; 
+width: 0; 
+height: 0; 
+position: absolute; 
+left:-20px; 
+top: 5px; 
+} 
+<PRE class=html name="code">/*尖端指向左侧的三角形，内部，*/</PRE>.triRightInner{ z-index: 3; border: 8px solid #FEFAB8; border-color: transparent #FEFAB8 transparent transparent;<SPAN style="FONT-FAMILY: Arial, Helvetica, sans-serif">/*颜色应与提示框的background-color一致*/</SPAN><BR> 
+width: 0; height: 0; position: absolute; left:-16px; top:7px;}</style></head><body> <div class="bubble_tooltip_common" id="bubble_tooltip"> <label class="triRight"></label> <label class="triRightInner"></label> <span id="bubble_tooltip_content"></span> </div> 
+<h1>气泡对话框</h1> <div id="left"> <p> <span onmouseover="showToolTip(event,'这是一个提示框。')" onmouseout="hideToolTip()">鼠标放于此处，会弹出一个气泡对话框。</span></p> </div> <div id="content"> <p><a href="#" onmouseover="showToolTip(event,'This is the content of the tooltip.')" onmouseout="hideToolTip()">sharejs.com</a></p> 
+</div> <div id="editor" contenteditable> [Click to edit.] </div></body></html> 
+<PRE></PRE> 
+<P></P> 
+<P><SPAN style="FONT-FAMILY: Microsoft YaHei; FONT-SIZE: 18px"><STRONG>这是JavaScript代码：</STRONG></SPAN></P> 
+<P></P> 
+<PRE class=javascript name="code">function showToolTip(e,text){ 
+if(document.all)e = event; 
+var obj = document.getElementById('bubble_tooltip'); 
+var obj2 = document.getElementById('bubble_tooltip_content'); 
+obj2.innerHTML = text; 
+var st = Math.max(document.body.scrollTop,document.documentElement.scrollTop); 
+if(navigator.userAgent.toLowerCase().indexOf('safari')>=0)st=0; 
+var leftPos = e.clientX + 20; //clientX 事件属性返回当事件被触发时鼠标指针相对于浏览器页面（或客户区）的水平坐标 
+if(leftPos<0)leftPos = 0; 
+obj.style.left = leftPos + 'px'; 
+obj.style.top = e.clientY + st + 'px'; 
+obj.style.display = 'block'; 
+fadeIn(obj,5,100); 
+} 
+
+function hideToolTip() 
+{ 
+var obj = document.getElementById('bubble_tooltip'); 
+//obj.style.display = 'none'; 
+fadeOut(obj,5,0); 
+} 
+
+//设置元素透明度,透明度值按IE规则计,即0~100 
+function SetOpacity(ev, v){ 
+ev.filters ? ev.style.filter = 'alpha(opacity=' + v + ')' : ev.style.opacity = v / 100; 
+} 
+
+//淡入效果(含淡入到指定透明度) 
+function fadeIn(elem, speed, opacity){ 
+/* 
+* 参数说明 
+* elem==>需要淡入的元素 
+* speed==>淡入速度,正整数(可选) 
+* opacity==>淡入到指定的透明度,0~100(可选) 
+*/ 
+speed = speed || 20; 
+opacity = opacity || 100; 
+//显示元素,并将元素值为0透明度(不可见) 
+elem.style.display = 'block'; 
+SetOpacity(elem, 0); 
+//初始化透明度变化值为0 
+var val = 0; 
+//循环将透明值以2递增,即淡入效果 
+(function(){ 
+SetOpacity(elem, val); 
+val += 5; 
+if (val <= opacity) { 
+setTimeout(arguments.callee, speed) 
+} 
+})(); 
+} 
+
+//淡出效果(含淡出到指定透明度) 
+function fadeOut(elem, speed, opacity){ 
+/* 
+* 参数说明 
+* elem==>需要淡入的元素 
+* speed==>淡入速度,正整数(可选) 
+* opacity==>淡入到指定的透明度,0~100(可选) 
+*/ 
+speed = speed || 20; 
+opacity = opacity || 0; 
+//初始化透明度变化值为0 
+var val = 100; 
+//循环将透明值以5递减,即淡出效果 
+(function(){ 
+SetOpacity(elem, val); 
+val -= 5; 
+if (val >= opacity) { 
+setTimeout(arguments.callee, speed); 
+}else if (val < 0) { 
+//元素透明度为0后隐藏元素 
+elem.style.display = 'none'; 
+} 
+})(); 
+}</PRE><BR> 
+<BR> 
+<P></P> 
+<PRE></PRE> 

@@ -1,0 +1,229 @@
+<div id="moments">
+				<!-- 用户背景 -->
+				<div id="huge-screen">
+					
+					<div id="user">
+						<div id="user-name">浅眠*Y</div>
+						<div id="user-photo">
+							<img src="img/discover/photo.jpg" />
+						</div>
+					</div>
+					
+				</div>
+				
+				<div id="notification"></div>
+				
+				<div id="moments-list">
+					  <div class="moment-content">
+						
+						<div class="moment-content-left">
+							<img src="img/discover/photo.jpg"  />
+						</div>
+						
+						<div class="moment-content-right">
+							<div class="moment-content-username">浅眠*Y</div>
+							<div class="moment-content-text"> 我见过失败速度最快的拔河比赛</div>
+							<div class="moment-content-imgs">
+								<div class="user-imgs" data-img="img/discover/bahe1.jpg"></div>
+								<div class="user-imgs" data-img="img/discover/bahe2.jpg"></div>
+								
+							</div>
+							<div class="moment-function">
+								<div class="moment-function-time">刚刚</div>
+								<div class="moment-function-right">
+									
+									<!-- 弹出层 : 点赞和评论 --> 
+									<div class="moment-function-control">
+										<div >
+											<div></div>
+											<div>赞</div>
+										</div>
+										<div>
+											<div></div>
+											<div>评论</div>
+										</div>
+									</div>
+								
+								</div>
+							</div>
+							
+							<div class=""></div>
+							
+						</div>
+						
+					</div>
+		              <div class="moment-content">
+						
+						<div class="moment-content-left">
+							<img src="img/discover/sister.jpg"  />
+						</div>
+						
+						<div class="moment-content-right">
+							<div class="moment-content-username">Sister</div>
+							<div class="moment-content-text">学习使我快乐 </div>
+							<div class="moment-content-imgs">
+								<div class="user-imgs" data-img="img/discover/library1.jpg"></div>
+								<div class="user-imgs" data-img="img/discover/library2.jpg"></div>
+								<div class="user-imgs" data-img="img/discover/library3.jpg"></div>
+							</div>
+							<div class="moment-function">
+								<div class="moment-function-time">11分钟前</div>
+								
+								
+								<div class="moment-function-right">
+									<!-- 弹出层 : 点赞和评论 --> 
+									<div class="moment-function-control">
+										<div >
+											<div></div>
+											<div>赞</div>
+										</div>
+										<div>
+											<div></div>
+											<div>评论</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							
+							
+							
+							<!-- 点赞 与 评论区 -->
+							<div id="triangle-up"></div>
+							<div class="comments-board">
+								
+								
+								<!-- 点赞区域 -->
+								<div class="upvotes">
+									<div class="upvotes-img"></div><!-- 桃心 -->
+									<div class="upvotes-names"><!-- 点赞头像 -->
+										<div class="name">Brother, </div>
+										<div class="name">uncle</div>										
+									</div>
+								</div>
+								
+								<!-- 评论区 -->
+								<div class="comments">
+									
+									<div class="comment">
+										<div class="comment-name">Brother : </div>
+										<div class="comment-content">可以可以. </div>
+									</div>
+									<div class="comment">
+										<div class="comment-name">aunt : </div>
+										<div class="comment-content">继续努力👍 . </div>
+									</div>
+									
+								</div>
+							</div>
+							
+						</div>
+						
+					</div>
+					<div class="moment-content">
+						
+						<div class="moment-content-left">
+							<img src="img/discover/facebook.jpg.png"  />
+						</div>
+						
+						<div class="moment-content-right">
+							<div class="moment-content-username">facebook</div>
+							<div class="moment-content-text">合作愉快</div>
+							<div class="moment-content-imgs">
+								<div class="user-imgs" data-img="img/discover/ios.jpg.png" ></div>
+								<div class="user-imgs" data-img="img/discover/neusoft.jpg.png" ></div>
+								<div class="user-imgs" data-img="img/discover/openstack.jpg" ></div>
+								<div class="user-imgs" data-img="img/discover/oracle.png" ></div>
+								<div class="user-imgs" data-img="img/discover/spring.jpg" ></div>
+								
+							</div>
+							<div class="moment-function">
+								<div class="moment-function-time">42分钟前</div>
+								<div class="moment-function-right">
+									<!-- 弹出层 : 点赞和评论 --> 
+									<div class="moment-function-control">
+										<div >
+											<div></div>
+											<div>赞</div>
+										</div>
+										<div>
+											<div></div>
+											<div>评论</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							
+							<div class=""></div>
+							
+						</div>
+						
+					</div>
+					
+					
+					
+					
+					
+					
+				</div>
+				</div>
+		</div>
+			
+<script>
+	$(function(){
+		$("#moments").show(function(){
+			$("#nav_back").click(function(){
+			$("#nav_back").hide()
+			$("#search_img").show()
+			$("#function_img").css("background-image","url(../img/加号.svg)")
+			$("#menus").show()
+			$("#nav-center-content").html("微信")
+			
+			$("#dynamic").load("dynamic/03discover.html")
+		})
+		})
+		
+	})
+</script>
+
+<script>
+	$(function(){
+
+	/* 在发现里  点击朋友圈时   要让发现隐藏   让朋友圈显示  */
+	
+	/*  先让回复区域 都隐藏   */
+	$(".moment-function-control").hide();
+	
+	$(".moment-function-right").click(function(){
+		var control = $(this).find(".moment-function-control");
+		$(control).toggle(100)
+	});
+	
+	
+	
+	/* 图片初始化 */
+	$(".moment-content-imgs").each(function(){
+		
+		var imgs = $(this).find(".user-imgs");
+		
+		if(imgs.length==1) {
+			imgs.css("background-image" , "url('"+imgs.data("img")+"')");
+			imgs.addClass("user-imgs-single");
+		} else if( imgs.length>1 ) {
+
+			imgs.each(function( i , img ){
+				$(img).css("background-image" , "url('"+$(img).data("img")+"')");
+				$(img).addClass("user-imgs-multi");
+			});
+		
+		} else {
+			
+		}
+
+	});
+
+
+});
+
+
+
+</script>

@@ -1,0 +1,103 @@
+<div id="wrap-me" class="me">
+				
+				
+				<div class="groups position-relative" id="id_user">
+					<div class="group-item position-relative" id="mine" style="top: 15px;">
+						<div id="id_photo" class="group-items-left">
+							<img src="img/discover/photo.jpg" style="width: 50px;height: 50px;"/>
+						</div>
+						<div class="me-center ">
+							<div id="id-name">浅眠 *Y</div>
+							<div id="id_num">微信号: JYW19970428</div>
+						</div>
+						<div class="group-right">
+							<img src="img/discover/二维码.svg" />
+						</div>
+					</div>
+					
+					
+				</div>
+				
+				<div class="groups">
+					<div class="group-item" id="wallet">
+						<div class="group-item-left">
+							<img src="img/discover/微信钱包.svg" />
+						</div>
+						<div class="group-item-center ">钱包</div>
+						<div class="group-item-right"></div>
+					</div>
+					
+					
+					
+					
+				</div>
+				<div class="groups">
+					
+					<div class="group-item">
+						<div class="group-item-left ">
+							<img src="img/discover/微信收藏_IOS.svg" />
+						</div>
+						<div class="group-item-center ">收藏</div>
+						<div class="group-item-right"></div>
+					</div>
+					
+					<div class="group-item">
+						<div class="group-item-left ">
+							<img src="img/discover/相册.svg" />
+						</div>
+						<div class="group-item-center ">相册</div>
+						<div class="group-item-right"></div>
+					</div>
+					
+					<div class="group-item">
+						<div class="group-item-left ">
+							<img src="img/discover/icon_卡包.svg" />
+						</div>
+						<div class="group-item-center ">卡包</div>
+						<div class="group-item-right"></div>
+					</div>
+					<div class="group-item">
+						<div class="group-item-left">
+							<img src="img/discover/表情.svg"/>
+						</div>
+						<div class="group-item-center ">表情</div>
+						<div class="group-item-right"></div>
+					</div>
+					
+				</div>
+				
+				
+				
+				
+				<div class="groups">
+					<div class="group-item">
+						<div class="group-item-left">
+							<img src="img/discover/微信_设置_IOS.svg" />
+						</div>
+						<div class="group-item-center ">设置</div>
+						<div class="group-item-right"></div>
+					</div>
+					
+					
+					
+					
+				</div>
+
+				
+				
+				
+				
+			</div>
+			
+<script>
+	$(function(){
+		$("#wallet").click(function(){
+			$("#nav_back").show()
+			$("#nav-center-content").html("我的钱包")
+			$("#search_img").hide()
+			$("#function_img").css("background-image","url(../img/discover/二维码.svg)")
+			$("#dynamic").load("dynamic/wallet.html")
+			$("#menus").hide()
+		})
+	})
+</script>

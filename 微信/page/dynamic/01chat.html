@@ -1,0 +1,158 @@
+
+
+		  	
+          	<div id="list" class="">
+          	</div>
+          	 <hr />
+          	 <div id="buttom" class="flex x-end y-items-center">
+          	 	<div id="input_voice" class=""></div>
+                <input id="content" type="text" class="shadow" />
+             <!--<div id="content1" class="hidden">按住 说话</div>-->
+             <div id="commic" >
+             	
+             </div>
+                <input type="button" name="btn" id="btn"   />
+                <!--<div id="input_buttom">
+                	<div id="chat_video">
+                		
+                	</div>
+                	<div id="location">
+                		
+                	</div>
+                </div>-->
+          	</div>
+             
+		  
+		
+
+		
+<script>
+	$(function() {    
+
+
+
+		var key = "b7f3afeea99c40c7a9df742f64551105";
+
+		var url = "http://www.tuling123.com/openapi/api";
+		
+		$('#content').bind('keydown',function(event){
+        if(event.keyCode == "13") {                
+			var info = {
+
+				"key": key,
+
+				"info": $("#content").val()   // = content.value
+
+			}			
+			var self = $("<div class='chat_list flex x-end y-items-center'>"+"<div class='right size '>"+$("#content").val()+"</div><div class='right_img'></div></div>")		          
+			$("#list").append(self)						
+			$.ajax({
+
+				type: "POST",
+
+				url: url,
+
+				data: info,
+
+				dataType: "json",
+			
+
+				success: function(result) {
+
+					var robot = $("<div class='chat_list flex x-start y-items-center'>"+"<div class='left_img'></div>"+"<div class='left size '>"+result.text+"</div></div>")
+
+
+                  
+					$("#list").append(robot)
+
+				
+
+				}
+
+			});
+			
+			
+　        　
+              
+			
+			
+        }
+        })
+
+		$('#btn').click(function() {
+
+			
+
+			var info = {
+
+				"key": key,
+
+				"info": $("#content").val()   // = content.value
+
+			}
+
+			
+
+			var self = $("<div class='chat_list flex x-end y-items-center'>"+"<div class='right size '>"+$("#content").val()+"</div><div class='right_img'></div></div>")
+
+
+			
+           
+
+			$("#list").append(self)
+			
+			
+			$.ajax({
+
+				type: "POST",
+
+				url: url,
+
+				data: info,
+
+				dataType: "json",
+			
+
+				success: function(result) {
+
+					var robot = $("<div class='chat_list flex x-start y-items-center'>"+"<div class='left_img'></div>"+"<div class='left size '>"+result.text+"</div></div>")
+
+                  
+					$("#list").append(robot)
+
+				
+
+				}
+
+			});
+			
+			
+　        　
+              
+
+
+		})
+
+        
+
+	})
+
+
+</script>
+<script>
+	$(function(){
+		
+			$("#nav_back").click(function(){
+			$("#nav_back").hide()
+			$("#search_img").show()
+			$("#function_img").css("background-image","url(../img/加号.svg)")
+			$("#menus").show()
+
+			$("#nav-center-content").html("微信")
+			$("#list").show(function(){
+			$("#dynamic").load("dynamic/02chat.html")
+		})
+		})
+		
+	})
+</script>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+
+		
+
+		<!-- 如果在移动端显示, 需要此行代码  -->
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+		<meta charset="UTF-8">
+
+		<title></title>
+		
+        <link rel="stylesheet" type="text/css" href="../css/chat.css"/>
+        <link rel="stylesheet" type="text/css" href="../css/container.css"/>
+        <link rel="stylesheet" type="text/css" href="../css/coomon.css"/>
+        <link rel="stylesheet" type="text/css" href="../css/menus.css"/>
+        <link rel="stylesheet" type="text/css" href="../css/nav.css"/>
+        <link rel="stylesheet" type="text/css" href="../css/signal.css"/>
+        <link rel="stylesheet" type="text/css" href="../css/firend.css"/>
+        <link rel="stylesheet" type="text/css" href="../css/discover.css"/>
+        
+        <link rel="stylesheet" type="text/css" href="../css/wallet.css"/>
+	</head>
+
+	<body>
+
+		<div id="container">
+			<div id="signal" >
+
+				<div id="singal_left" class="flex x-start y-items-center" >
+
+					<div id="singal_level" class="flex x-around y-items-end ">
+
+						<div class="singal_strong "></div>
+
+						<div class="singal_strong "></div>
+
+						<div class="singal_strong "></div>
+
+						<div class="singal_strong "></div>
+
+						<div class="singal_weak "></div>
+
+					</div>
+
+					
+
+					<div id="singal_operator"><font color="white">4G</font></div>
+
+				</div>
+
+				
+
+				<div id="singal_center" class="singal-font flex x-center y-items-center">
+					<script type="text/javascript">
+ window.onload = function() {
+  var show = document.getElementById("singal_center");
+  setInterval(function() {
+   var time = new Date();
+   // 程序计时的月从0开始取值后+1
+   var m = time.getMonth() + 1;
+   var t = time.getFullYear() + "-" + m + "-"
+     + time.getDate() + " " + time.getHours() + ":"
+     + time.getMinutes() + ":" + time.getSeconds();
+   show.innerHTML = t;
+  }, 50);
+ };
+</script>
+				</div>
+
+				
+
+				<div id="singal_right" class="flex x-end y-items-center">
+
+					<div id="signal_items" class="flex x-end y-items-center">
+						<div class="signal_items " style="background-image:url(../img/闹钟.svg);"></div>
+						<div class="signal_items" style="background-image:url(../img/蓝牙.svg);"></div>
+					</div>
+					<!--该层存放小图标-->
+
+					<div class="singal-font">
+						10%
+					</div>
+
+					<div id="battery" >
+
+						<div id="battery_body"></div>
+
+					</div>
+
+					<div id="battery_header"></div>
+
+					
+
+				</div>
+
+			</div>
+
+			
+
+			<div id="dynamic_nav">
+				
+			</div>
+
+			
+
+			<!--<div id="search">search</div>-->
+
+          <div id="dynamic">
+          	  
+          </div>
+
+			
+			
+
+			<div id="menus" class="flex  x-between  ">
+
+				
+
+				<div id="menu-chat" class="menu  flex flow-y x-around y-items-center menus-font-normal">
+
+					<div class="menu-icon" style="background-image:url(../img/微信.svg);default;"></div>
+
+					<div >微信</div>
+
+				</div>
+
+				<div id="menu-friend" class="menu  flex flow-y x-center y-items-center menus-font-normal">
+
+					<div class="menu-icon" style="background-image: url(../img/通讯录.svg);"></div>
+
+					<div>通讯录</div>
+
+				</div>
+
+				<div id="menu-discover" class="menu  flex flow-y x-center y-items-center menus-font-normal">
+
+					<div class="menu-icon" style="background-image: url(../img/发现.svg);"></div>
+
+					<div>发现</div>
+
+				</div>
+
+				<div id="menu-me" class="menu  flex flow-y x-center y-items-center menus-font-normal">
+
+					<div class="menu-icon" style="background-image: url(../img/我.svg);"></div>
+
+					<div>我</div>
+
+				</div>
+
+				
+
+			</div>
+
+
+
+		</div>
+
+		
+
+	</body>
+
+</html>
+
+
+
+
+<script src="../js/jquery-2.0.3/jquery-2.0.3.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/jquery-2.0.3/jquery-2.0.3.min.js" type="text/javascript" charset="utf-8"></script>
+
+<script src="../js/router.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/singal.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/send_msg.js" type="text/javascript" charset="utf-8"></script>
+
