@@ -22,7 +22,7 @@
         <link rel="stylesheet" type="text/css" href="../css/signal.css"/>
         <link rel="stylesheet" type="text/css" href="../css/firend.css"/>
         <link rel="stylesheet" type="text/css" href="../css/discover.css"/>
-        
+        <link rel="stylesheet" type="text/css" href="../css/add.css"/>
         <link rel="stylesheet" type="text/css" href="../css/wallet.css"/>
 	</head>
 
@@ -50,6 +50,7 @@
 					
 
 					<div id="singal_operator"><font color="white">4G</font></div>
+					
 
 				</div>
 
@@ -63,9 +64,12 @@
    var time = new Date();
    // 程序计时的月从0开始取值后+1
    var m = time.getMonth() + 1;
-   var t = time.getFullYear() + "-" + m + "-"
-     + time.getDate() + " " + time.getHours() + ":"
-     + time.getMinutes() + ":" + time.getSeconds();
+if(time.getMinutes()<10)
+   var t =  time.getHours() + ":0"
+     + time.getMinutes() ;
+else 
+    t=time.getHours() + ":"
+     + time.getMinutes() ;
    show.innerHTML = t;
   }, 50);
  };
@@ -82,8 +86,23 @@
 					</div>
 					<!--该层存放小图标-->
 
-					<div class="singal-font">
-						10%
+					<div class="singal-font" id="battery_font">
+						<span id="span1">10%</span>
+						<script>  
+                             var num = 10;
+                               
+                             var t = setInterval(function(){  
+                                      num++;
+                                      
+                                     var span1 = document.getElementById("span1");  
+                                      span1.innerText = num+"%";  
+                                          if(num==100){  
+                                          clearInterval(t);  
+                                        }         
+                                         var curr = $("#battery_body").width();
+                                         if(curr==4)num=10;
+                                  },1500);  
+                       </script>
 					</div>
 
 					<div id="battery" >

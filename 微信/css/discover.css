@@ -12,7 +12,7 @@
 
 }
 
-#wrap-discovery {
+#wrap-discovery ,#wrap-me,#wrap-friend{
 	background-color: whitesmoke;
 	height: 100%;
 	flex-grow: 1;

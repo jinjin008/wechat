@@ -44,7 +44,7 @@
 				"info": $("#content").val()   // = content.value
 
 			}			
-			var self = $("<div class='chat_list flex x-end y-items-center'>"+"<div class='right size '>"+$("#content").val()+"</div><div class='right_img'></div></div>")		          
+			var self = $("<div class='chat_list flex x-end y-items-center'>"+"<div class='right size '>"+$("#content").val()+"</div><div id='right_img'></div></div>")		          
 			$("#list").append(self)						
 			$.ajax({
 
@@ -59,7 +59,7 @@
 
 				success: function(result) {
 
-					var robot = $("<div class='chat_list flex x-start y-items-center'>"+"<div class='left_img'></div>"+"<div class='left size '>"+result.text+"</div></div>")
+					var robot = $("<div class='chat_list flex x-start y-items-center'>"+"<div id='left_img'></div>"+"<div class='left size '>"+result.text+"</div></div>")
 
 
                   
@@ -93,7 +93,7 @@
 
 			
 
-			var self = $("<div class='chat_list flex x-end y-items-center'>"+"<div class='right size '>"+$("#content").val()+"</div><div class='right_img'></div></div>")
+			var self = $("<div class='chat_list flex x-end y-items-center'>"+"<div class='right size '>"+$("#content").val()+"</div><div id='right_img'></div></div>")
 
 
 			
@@ -115,7 +115,7 @@
 
 				success: function(result) {
 
-					var robot = $("<div class='chat_list flex x-start y-items-center'>"+"<div class='left_img'></div>"+"<div class='left size '>"+result.text+"</div></div>")
+					var robot = $("<div class='chat_list flex x-start y-items-center'>"+"<div id='left_img'></div>"+"<div class='left size '>"+result.text+"</div></div>")
 
                   
 					$("#list").append(robot)

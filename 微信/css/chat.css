@@ -255,7 +255,7 @@
 				
 			}
 			
-.left_img{
+#left_img{
 	float: left;
 	width: 40px;
 	height: 40px;
@@ -265,7 +265,7 @@
 	background-position: center;
 }
 
-.right_img{
+#right_img{
 	float: right;
 	width: 50px;
 	height: 50px;

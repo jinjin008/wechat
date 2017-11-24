@@ -34,10 +34,10 @@
 
 #singal_right {
 
-	flex:3;
+	flex:4;
 
 	height: 100%;
-
+   display: flex;
 }
 
 
@@ -54,7 +54,7 @@
 
 	width: 42px;
 
-	margin-left: 4px;
+	/*margin-left: 4px;*/
 
 }
 
@@ -137,7 +137,7 @@
 	height: 100%;
 
 	width: 70px;
-
+    flex: 1;
 }
 
 /* singal_operator : end */
@@ -155,6 +155,7 @@
 	font-family: "微软雅黑";
 
 	font-size: 80%;
+	/*flex: 1;*/
 
 }
 
@@ -175,7 +176,7 @@
 	height: 13px;
 
 	border: 1px solid white;
-
+    
 	margin-left: 3px;
 
 }

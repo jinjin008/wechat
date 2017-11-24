@@ -10,7 +10,7 @@
 							<div id="id-name">浅眠 *Y</div>
 							<div id="id_num">微信号: JYW19970428</div>
 						</div>
-						<div class="group-right">
+						<div id="ewm" class="group-right">
 							<img src="img/discover/二维码.svg" />
 						</div>
 					</div>
@@ -99,5 +99,17 @@
 			$("#dynamic").load("dynamic/wallet.html")
 			$("#menus").hide()
 		})
+	})
+	
+	$(function(){
+		$("#ewm").click(function(){
+			$("#dynamic").load("dynamic/ewm.html")
+			$("#nav_back").show()
+		$("#search_img").hide()
+		$("#nav-center-content").html("二维码名片")
+		$("#function_img").hide()
+		$("#menus").hide()
+		})
+		
 	})
 </script>

@@ -41,6 +41,8 @@ $(function(){
     $("#menu-friend").click(function(){
 		$("#dynamic").load("dynamic/add_list.html")
 //		$("#nav_center_content").html("通讯录");
+
+//      $("#nav_right").show()
 		$("#menu-chat .menu-icon").css("background-image","url(../img/微信.svg)");
         $("#menu-friend .menu-icon").css("background-image","url(../img/通讯录-press.svg)");
         $("#menu-discover .menu-icon").css("background-image","url(../img/发现.svg)");
